@@ -59,11 +59,13 @@
     let latte = $('#latte');
     let hotChocolate = $('#hot-chocolate');
 
+    //coffeeImage.click(function() { coffeeImage.fadeOut(2000, "linear"); });
+
+
     function showBeans() {
 
         // Note below displays javascript, while line of code is jquery
         // coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
-        // coffeeImage.click(function() { $("#img").fadeIn(); });
         coffeeImage.attr('src', 'static/coffee_beans.jpg');
 
     }
@@ -88,9 +90,13 @@
         drinksOrdered.push(drinkType);
         console.log(drinksOrdered);
 
-        revenueMessage = "Your total is: $" + revenue();
+        revenueMessage = "Your total is $" + revenue();
         console.log(revenueMessage);
+        $("#revenue").html(revenueMessage);
+
     }
+
+
 
     // coffee_beans
     // click
@@ -99,10 +105,11 @@
     // back to coffee_beans -> setTimeout(coffee_beans, 4000)
 
     // coffeeImage.addEventListener('click', showMachine);
-    coffeeImage.on('click', function () { makeCoffee("brew"); });
-    espresso.on('click', function () { makeCoffee("espresso"); });
-    latte.on('click', function () { makeCoffee("latte"); });
-    hotChocolate.on('click', function () { makeCoffee("hot chocolate"); });
+   // coffeeImage.on('click', function () { makeCoffee("brew"); });
+    coffeeImage.on('click',() => { makeCoffee("brew"); });
+    espresso.on('click',() => { makeCoffee("espresso"); });
+    latte.on('click',() => { makeCoffee("latte"); });
+    hotChocolate.on('click',() => { makeCoffee("hot chocolate"); });
 
     // use this JavaScript object in further study step
 
@@ -123,6 +130,9 @@
 
         return total.toFixed(2);
     }
+
+
+
 
 
 </script>
